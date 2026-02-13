@@ -19,4 +19,8 @@ public class Duck extends Bird {
     public int getValue() {
         return 20;
     }
+
+    public Duck(String name) {
+        this.name = name;
+    }
 }

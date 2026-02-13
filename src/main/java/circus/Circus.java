@@ -7,10 +7,13 @@ import circus.stuff.Cannon;
 import circus.stuff.Equipment;
 import circus.stuff.Ladder;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Circus {
     private static Animal[] animals = {
-            new Duck(),
-            new Parrot()
+            new Duck("John"),
+            new Parrot("Jane")
     };
     private static Equipment[] equipments = {
             new Ladder(50),
@@ -39,8 +42,23 @@ public class Circus {
         return total;
     }
 
+
     public static void main(String[] args) {
+        System.out.println("Num of animals in circus " + animals.length);
+        for (Animal a: animals){
+            System.out.println(a);
+        }
+        ArrayList<Animal> animalArrayList = new ArrayList<>(Arrays.asList(animals));
+        animalArrayList.add(new Parrot("Elephant"));//supposed to be elephant here but wtv
+        System.out.println("Num of animals in circus " + animals.length);
+
         makeAnimalsTalk();
         System.out.println("Total value of equipments " + calculateValue(equipments));
     }
+//    private static Animal findAnimal(ArrayList<Animal> animalArrayList, String name){
+//        for(Animal a: animalArrayList){
+//
+//        }
+//    }
 }
+
